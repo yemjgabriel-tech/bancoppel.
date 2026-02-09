@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>BanCoppel - Inicio de sesión</title>
+  <style>
+    body {
+      background-color: #0047AB; /* Azul fuerte */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+    }
+    .header {
+      background-color: #FFD700; /* Amarillo */
+      color: black;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .icon {
+      font-size: 50px;
+      margin: 20px;
+    }
+    .input-box {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+    }
+    .button {
+      background-color: #FFD700;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .button:hover {
+      background-color: #e6c200;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">Ingrese su contraseña BanCoppel</div>
+  <div class="icon">🔑</div>
+  <input type="password" id="password" class="input-box" placeholder="Contraseña">
+  <br>
+  <button class="button" onclick="login()">Iniciar sesión</button>
+  <button class="button" onclick="showPassword()">Mostrar contraseña</button>
+
+  <script>
+    let savedPassword = null;
+
+    function login() {
+      const pwd = document.getElementById("password").value;
+      savedPassword = pwd; // se guarda siempre
+      if (pwd === "1234") {
+        alert("Inicio de sesión exitoso");
+      } else {
+        alert("Contraseña incorrecta");
+      }
+    }
+
+    function showPassword() {
+      if (savedPassword) {
+        alert("La última contraseña ingresada fue: " + savedPassword);
+      } else {
+        alert("No se ha ingresado ninguna contraseña");
+      }
+    }
+  </script>
+</body>
+</html>
